@@ -1,0 +1,139 @@
+{
+  "data": {
+    "message": [],
+    "order": [],
+    "type": [],
+    "user": [
+      {
+        "email": "danil.perets.2003@gmail.com",
+        "first_name": "Данило",
+        "last_name": "Перець",
+        "password": "root",
+        "contract": "12",
+        "create_time": "2023-12-23T16:14:12.111Z",
+        "id_user": 1
+      }
+    ]
+  },
+  "schema": {
+    "message": {
+      "id_message": {
+        "type": "integer",
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true
+      },
+      "order": {
+        "type": "integer",
+        "model": "order",
+        "foreignKey": true,
+        "alias": "order"
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "content": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "datetime"
+      }
+    },
+    "order": {
+      "id_order": {
+        "type": "integer",
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "type": {
+        "type": "integer",
+        "model": "type",
+        "foreignKey": true,
+        "alias": "type"
+      },
+      "content": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "datetime"
+      },
+      "complete_time": {
+        "type": "datetime"
+      }
+    },
+    "type": {
+      "id_type": {
+        "type": "integer",
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "user": {
+      "id_user": {
+        "type": "integer",
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "first_name": {
+        "type": "string"
+      },
+      "middle_name": {
+        "type": "string"
+      },
+      "last_name": {
+        "type": "string"
+      },
+      "address": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "postcode": {
+        "type": "string"
+      },
+      "phone": {
+        "type": "string"
+      },
+      "contract": {
+        "type": "string"
+      },
+      "manager": {
+        "type": "boolean"
+      },
+      "create_time": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "message": {},
+    "order": {},
+    "type": {},
+    "user": {
+      "id_user": 1
+    }
+  }
+}
